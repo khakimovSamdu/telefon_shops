@@ -1,12 +1,13 @@
 from django.urls import path
-from .views import get_add, get_all, get_brends, brend_item_delete, brend_item_update, brend_all
+from .views import get_add, get_all, get_brends, brend_item_delete, brend_item_update, brend_all, get_smartphone_id
 
 urlpatterns = [
     path('add/', get_add),
     path('all/', get_all),
     path('brends/', get_brends),
-    path('<brend>/<int:id>/delete/', brend_item_delete),
-    path('<brend>/<int:id>/update/', brend_item_update),
+    path('delete/<int:id>/', brend_item_delete),
+    path('update/<int:id>/', brend_item_update),
     path('<brend>/all/', brend_all),
+    path('get/<int:id>/', get_smartphone_id),
    
 ]
