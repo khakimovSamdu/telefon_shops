@@ -1,8 +1,13 @@
 from django.shortcuts import render
 from .models import Smartphone
+from django.views.generic import ListView
 import json
 from django.http import HttpRequest, HttpResponse, JsonResponse
 # Create your views here.
+
+class Homepage(ListView):
+    model = Smartphone
+    template_name = 'index.html'
 
 
 def get_add(request: HttpRequest):
